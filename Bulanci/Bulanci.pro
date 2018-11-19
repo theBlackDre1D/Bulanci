@@ -16,7 +16,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    SDLSystem.cpp
+    SDLSystem.cpp \
+    game.cpp \
+    map.cpp \
+    player.cpp \
+    weapon.cpp \
+    weapondrop.cpp \
+    bullet.cpp \
+    gameinterface.cpp \
+    hud.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -37,4 +45,12 @@ INCLUDEPATH += /usr/local/Cellar/sdl2/2.0.8/include/SDL2
 
 HEADERS += \
     ApplicationDefines.h \
-    SDLSystem.h
+    SDLSystem.h \
+    game.h \
+    map.h \
+    player.h \
+    weapon.h \
+    weapondrop.h \
+    bullet.h \
+    gameinterface.h \
+    hud.h
