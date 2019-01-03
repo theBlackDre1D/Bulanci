@@ -1,5 +1,8 @@
 QT -= gui
 
+QT += core
+QT += network
+
 CONFIG += c++11 console
 CONFIG -= app_bundle
 
@@ -16,7 +19,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    SDLSystem.cpp \
     game.cpp \
     map.cpp \
     player.cpp \
@@ -24,7 +26,8 @@ SOURCES += \
     weapondrop.cpp \
     bullet.cpp \
     gameinterface.cpp \
-    hud.cpp
+    hud.cpp \
+    server.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -40,12 +43,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 #LIBS += -L /Users/seremtinameno/Desktop/SFML-2.5.1-macos-clang/lib -llibsfml-graphics.2.5.1
 
 # include for SDL2 library in macOS
-LIBS += -L /usr/local/Cellar/sdl2/2.0.8/lib -lSDL2
-INCLUDEPATH += /usr/local/Cellar/sdl2/2.0.8/include/SDL2
+#LIBS += -L /usr/local/Cellar/sdl2/2.0.8/lib -lSDL2
+#INCLUDEPATH += /usr/local/Cellar/sdl2/2.0.8/include/SDL2
 
 HEADERS += \
     ApplicationDefines.h \
-    SDLSystem.h \
     game.h \
     map.h \
     player.h \
@@ -53,4 +55,5 @@ HEADERS += \
     weapondrop.h \
     bullet.h \
     gameinterface.h \
-    hud.h
+    hud.h \
+    server.h
