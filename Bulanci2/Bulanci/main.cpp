@@ -2,7 +2,8 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 
-#include "myrect.h"
+#include "player.h"
+#include "hud.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,11 +13,18 @@ int main(int argc, char *argv[])
     QGraphicsScene * scene = new QGraphicsScene();
 
     // create an item
-    MyRect * player = new MyRect();
-    player->setRect(0,0,100,100);
-
-    // add item to scene
+    Player * player = new Player();
     scene->addItem(player);
+
+    // create hud
+    Hud * hud = new Hud(player);
+    scene->addItem(hud);
+    hud->init();
+
+    // test enemy
+    Player * testEnemy = new Player();
+    testEnemy->setPos(50,50);
+    scene->addItem(testEnemy);
 
     // focus my item
     player->setFlag(QGraphicsItem::ItemIsFocusable);

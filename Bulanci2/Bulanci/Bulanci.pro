@@ -25,9 +25,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    myrect.cpp \
-    bullet.cpp
+    bullet.cpp \
+    player.cpp \
+    hud.cpp
 
 HEADERS += \
-    myrect.h \
-    bullet.h
+    bullet.h \
+    player.h \
+    direction.h \
+    defines.h \
+    hud.h
