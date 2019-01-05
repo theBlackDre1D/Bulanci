@@ -22,5 +22,4 @@ void Server::newConnection() {
 
     socket->close();
     qDebug() << "Server stoped!" << endl;
-
 }

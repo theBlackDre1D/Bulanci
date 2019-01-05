@@ -27,7 +27,9 @@ SOURCES += \
     bullet.cpp \
     gameinterface.cpp \
     hud.cpp \
-    server.cpp
+    client.cpp \
+    myserver.cpp \
+    mythread.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -56,4 +58,6 @@ HEADERS += \
     bullet.h \
     gameinterface.h \
     hud.h \
-    server.h
+    client.h \
+    myserver.h \
+    mythread.h

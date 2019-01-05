@@ -1,0 +1,31 @@
+#include "client.h"
+#include <QHostAddress>
+
+
+Client::Client(QObject *parent) : QObject(parent)
+{
+    socket = new QTcpSocket(this); // inicializuje sa socket
+
+    printf("Try to connect. \n");
+
+    connect(socket, SIGNAL(connected()), SLOT(on_connected())); // nieco na styl nastavenia listenerov/callback funkcii prosto ked dostane klient spravu vykona sa funkcia on_connected
+
+    // connecting to host na localhost a porte 5656
+    socket->connectToHost(QHostAddress::LocalHost, 5656);
+}
+
+void Client::on_connected() {
+    printf("Connection established.\n");
+//    char buffer[1024];
+
+    if (socket->canReadLine()) {
+        QByteArray data = socket->readAll();
+        qDebug() << "Data from server: " << data << endl;
+    }
+
+    sendMessage("Message from client"); // touto funkciou sa da poslat sprava hostovi (serveru) mala by fungovat aj mimo scoupu funkcie on_connected
+}
+
+void Client::sendMessage(QByteArray message) {
+    socket->write(message);
+}
