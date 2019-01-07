@@ -18,18 +18,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp \
-    game.cpp \
-    map.cpp \
-    player.cpp \
-    weapon.cpp \
-    weapondrop.cpp \
-    bullet.cpp \
-    gameinterface.cpp \
-    hud.cpp \
     client.cpp \
     myserver.cpp \
-    mythread.cpp
+    mythread.cpp \
+    main2.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -49,15 +41,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 #INCLUDEPATH += /usr/local/Cellar/sdl2/2.0.8/include/SDL2
 
 HEADERS += \
-    ApplicationDefines.h \
-    game.h \
-    map.h \
-    player.h \
-    weapon.h \
-    weapondrop.h \
-    bullet.h \
-    gameinterface.h \
-    hud.h \
     client.h \
     myserver.h \
     mythread.h
