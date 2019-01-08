@@ -18,4 +18,6 @@
 #define PLAYER_HEIGHT 60
 #define PLAYER_VELOCITY 10
 
+#define SERVER_PORT 5656
+
 #endif // DEFINES_H

@@ -4,6 +4,8 @@
 
 #include "player.h"
 #include "hud.h"
+#include "myserver.h"
+#include "client.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,19 +14,19 @@ int main(int argc, char *argv[])
     // create a scene
     QGraphicsScene * scene = new QGraphicsScene();
 
+    MyServer server;
+    server.startServer();
+
+    Client * client = new Client();
+
     // create an item
-    Player * player = new Player();
+    Player * player = client->getPlayer();
     scene->addItem(player);
 
     // create hud
     Hud * hud = new Hud(player);
     scene->addItem(hud);
     hud->init();
-
-    // test enemy
-    Player * testEnemy = new Player();
-    testEnemy->setPos(50,50);
-    scene->addItem(testEnemy);
 
     // focus my item
     player->setFlag(QGraphicsItem::ItemIsFocusable);

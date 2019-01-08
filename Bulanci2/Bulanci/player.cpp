@@ -3,18 +3,20 @@
 #include "bullet.h"
 
 #include "player.h"
+#include "client.h"
 
-Player::Player()
-    :QGraphicsRectItem::QGraphicsRectItem(),
+Player::Player(Client * client)
+    : QGraphicsRectItem(),
       direction(Direction::UP),
-      score(0)
+      score(0),
+      client(client)
 {
     setRect(0,0,PLAYER_WIDTH,PLAYER_HEIGHT);
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
-
+    emit client->movement();
     if(event->key() == Qt::Key_Left)
     {
         setPos(x() - PLAYER_VELOCITY, y());

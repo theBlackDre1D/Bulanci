@@ -38,7 +38,7 @@ void Bullet::move()
     for(const auto item: scene()->items())
     {
         Player * p;
-        if(p = dynamic_cast<Player*>(item))
+        if((p = dynamic_cast<Player*>(item)))
         {
             if(x() <= p->x() + PLAYER_WIDTH
                     && x() >= p->x()
