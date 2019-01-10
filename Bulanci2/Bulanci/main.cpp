@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     MyServer server;
     server.startServer();
 
-    Client * client = new Client();
+    ServerClient * client = new ServerClient();
 
     // create an item
     Player * player = client->getPlayer();

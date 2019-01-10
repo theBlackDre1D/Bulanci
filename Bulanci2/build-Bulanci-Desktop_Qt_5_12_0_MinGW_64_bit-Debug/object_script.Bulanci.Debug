@@ -6,7 +6,6 @@ debug/client.o
 debug/mythread.o
 debug/myserver.o
 debug/moc_bullet.o
-debug/moc_player.o
 debug/moc_client.o
 debug/moc_mythread.o
 debug/moc_myserver.o

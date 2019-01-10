@@ -32,5 +32,7 @@ void MyServer::incomingConnection(qintptr socketDescriptor) {
 
     client1->start(); // spusti sa vykonavanie vlakna
 
+    client1->send("blabla"); // tu to padne
+
     clients->push_back(client1);
 }

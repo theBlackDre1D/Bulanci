@@ -8,13 +8,13 @@
 #include "defines.h"
 #include "player.h"
 
-class Client;
+class ServerClient;
 
 class Player : public QGraphicsRectItem
 {
 
 public:
-    Player(Client * client);
+    Player(ServerClient * client);
     void keyPressEvent(QKeyEvent * event);
     void die();
     void increase_score();
@@ -23,7 +23,7 @@ public:
 private:
     Direction direction;
     int score;
-    Client * client;
+    ServerClient * client;
 
 };
 

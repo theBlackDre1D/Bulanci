@@ -8,11 +8,11 @@
 
 #include "player.h"
 
-class Client : public QObject
+class ServerClient : public QObject
 {
     Q_OBJECT
 public:
-    explicit Client(QObject *parent = nullptr);
+    explicit ServerClient(QObject *parent = nullptr);
     void sendMessage(QByteArray message);
     Player * getPlayer(){return player;}
 

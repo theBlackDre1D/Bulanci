@@ -6,7 +6,6 @@ release/client.o
 release/mythread.o
 release/myserver.o
 release/moc_bullet.o
-release/moc_player.o
 release/moc_client.o
 release/moc_mythread.o
 release/moc_myserver.o

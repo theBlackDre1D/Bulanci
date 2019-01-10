@@ -8,7 +8,7 @@ MyThread::MyThread(qintptr ID, QObject *parent) : QThread(parent)
 void MyThread::run() {
     qDebug() << " Thread started" << endl;
 
-    socket = new QTcpSocket(this); // inicializuje sa socket
+    socket = new QTcpSocket(socketDescriptor); // inicializuje sa socket
 
     if(!socket->setSocketDescriptor(this->socketDescriptor)) // toto je cast kodu z internetu neviem presne co to vykona ale socketDescriptor je vlastne socket ID
     {

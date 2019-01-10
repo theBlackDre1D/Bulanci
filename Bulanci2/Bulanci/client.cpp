@@ -1,6 +1,6 @@
 #include "client.h"
 
-Client::Client(QObject *parent) :
+ServerClient::ServerClient(QObject *parent) :
     QObject(parent),
     player(new Player(this))
 {
@@ -12,7 +12,7 @@ Client::Client(QObject *parent) :
     socket->connectToHost(QHostAddress::LocalHost, 5656);
 }
 
-void Client::on_connected() {
+void ServerClient::on_connected() {
     qDebug () << "Connection established.";
 
     if (socket->canReadLine()) {
@@ -23,10 +23,10 @@ void Client::on_connected() {
     sendMessage("Message from client");
 }
 
-void Client::sendMessage(QByteArray message) {
+void ServerClient::sendMessage(QByteArray message) {
     socket->write(message);
 }
 
-void Client::on_movement(){
+void ServerClient::on_movement(){
     sendMessage("movement");
 }
