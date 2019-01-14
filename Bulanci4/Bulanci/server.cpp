@@ -30,6 +30,7 @@ void Server::incomingConnection(qintptr socketDescriptor)
     connect(client, SIGNAL(moveLeft(ServerClient*)), SLOT(moveLeft(ServerClient*)), Qt::QueuedConnection);
     connect(client, SIGNAL(moveRight(ServerClient*)), SLOT(moveRight(ServerClient*)), Qt::QueuedConnection);
 
+    client->sendMessage("esketit od servera");
 
     clients->push_back(client);
     emit newClient(socketDescriptor, client);
